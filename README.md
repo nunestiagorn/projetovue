@@ -1,4 +1,4 @@
-## Dentro da pasta data execute:
+## Dentro da pasta "data" execute:
 npm install 
 
 ## Em seguida executar o comando:
