@@ -1,9 +1,8 @@
-## Dentro da pasta data 
+## Dentro da pasta "data" execute:
 npm install 
 
-## Executar o comando
+## Em seguida executar o comando:
 npm backend
 
-## Executar o comando
+## Fora da pasta data (na raiz) executar o comando:
 npm run dev
-
