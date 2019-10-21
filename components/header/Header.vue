@@ -6,6 +6,7 @@
           <h1 style="font-size: 20px !important; color: black; font-weight: bold">Ecommerce Celulares</h1>
         </nuxt-link>
 
+<!-- menu for mobile BURGER -->
         <a role="button" class="navbar-burger burger" @click="isMenuOpen = !isMenuOpen" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -13,13 +14,15 @@
         </a>
       </div>
 
+<!-- Search bar has it own function -->
       <div class="navbar-menu is-active">
         <div class="navbar-start">
           <div class="navbar-item field">
             <VmSearch></VmSearch>
           </div>
         </div>
-        
+
+        <!-- Social media with tooltips -->
         <div class="navbar-end">
             <a href="https://docs.google.com/document/d/16mG_u8KgYAeb8i0dKFWwCW4qgxH7Hzc3bLm-W6D6tQ0/edit?usp=sharing" class="navbar-item" target="_blank">
               Sistemas Similares
@@ -67,6 +70,7 @@
   export default {
     name: 'VmHeader',
 
+// tooltips for social media icons
     data () {
       return {
         linkedinTooltip: 'Siga-nos no Linkedin',

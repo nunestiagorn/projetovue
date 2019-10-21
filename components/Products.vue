@@ -24,6 +24,8 @@
           </button>
         </div>
       </div>
+
+<!-- here it's set the avaluation of each product after description of it -->
       <div class="content is-clearfix">
         <p>{{ product.description }}</p>
         <div class="is-pulled-left">
@@ -51,7 +53,9 @@
       <div class="card-footer btn-actions">
         <div class="card-footer-item field is-grouped">
           <div class="buttons">
+            <!-- this button adds the product in the cart -->
             <button class="button is-primary" v-if="!product.isAddedToCart" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
+            <!-- when added it turns into the "remove" button -->
             <button class="button is-text" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</button>
           </div>
            <div class="select is-rounded is-small">
@@ -65,6 +69,7 @@
     <nuxt-link
       class="details"
       :to="{
+        // each item has this params:
         name: 'product_detail-id',
         params: {
           id: product.id,
@@ -97,6 +102,7 @@ export default {
     }
   },
 
+// quantity os items to add to the cart 
   mounted () {
     for (let i = 1; i <= 99; i++) {
       this.quantityArray.push(i);
@@ -113,6 +119,7 @@ export default {
     }
   },
 
+// here adds the function to add the items to cart 
   methods: {
     addToCart (id) {
       let data = {
@@ -133,6 +140,7 @@ export default {
     saveToFavorite (id) {
       let isUserLogged = this.$store.state.userInfo.isLoggedIn;
 
+// if user not logged it shows the modal to logg in
       if (isUserLogged) {
         this.$store.commit('addToFavourite', id);
       } else {

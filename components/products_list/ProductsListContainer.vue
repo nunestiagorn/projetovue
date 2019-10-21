@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// filters products by titles.
 import VmProducts from '../Products';
 import { getByTitle } from '@/assets/filters';
 
@@ -18,6 +19,7 @@ export default {
   
   components: { VmProducts },
 
+// only shows 6 products by page
   created() {
     this.$store.dispatch('loadProducts', {
       _page: 1,
@@ -27,6 +29,7 @@ export default {
     });
   },
   
+  // if non products registrade it, it's shown this message:
   data () {
     return {
       id: '',
@@ -35,6 +38,7 @@ export default {
     };
   },
 
+// shows the products on the container ordering by title when user searched for something
   computed: {
     products () {
       if (this.$store.state.userInfo.hasSearched) {

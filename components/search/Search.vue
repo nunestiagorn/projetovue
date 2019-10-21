@@ -7,6 +7,7 @@
 			:placeholder="placeholder"
 			@keyup="search(value)"
 		>
+		<!-- icon for the search bar -->
 		<span class="icon is-small is-left">
 			<i class="fa fa-search"></i>
 		</span>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+// search starts empty
 export default {
   name: 'search',
 	data () {
@@ -22,6 +24,7 @@ export default {
 		}
 	},
 
+// if in the wish lists, change the placeholder
 	computed: {
 		placeholder () {
 			if (this.$route.path === '/wishlist') {
@@ -32,6 +35,7 @@ export default {
 		}
 	},
 
+// if lenght > 0 the search is 'true' and starts looking for what the user tapped
 	methods: {
 		search (value) {
 			if (value.length > 0) {

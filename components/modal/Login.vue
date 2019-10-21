@@ -73,6 +73,7 @@ import { isValidEmail } from '@/assets/validators';
 export default {
   name: 'login',
 
+// Modal with form to user log in. Changes the placeholder to help the user 
   data () {
     return {
       modalTitle: 'Login',
@@ -91,6 +92,7 @@ export default {
     };
   },
 
+// if user logged in it shows a welcome message 
   computed: {
     isUserLoggedIn () {
       return this.$store.getters.isUserLoggedIn;
@@ -118,6 +120,7 @@ export default {
         this.$store.commit('isUserLoggedIn', this.isFormSuccess);
       }
 
+// if the user type something wrong it highlights a error message on each input 
       if (!this.email) {
         this.highlightEmailWithError = true;
 
@@ -134,6 +137,8 @@ export default {
         this.highlightPasswordWithError = false;
       }
     },
+    
+    //while typen, it shows error message
     checkEmailOnKeyUp (emailValue) {
       if (emailValue && isValidEmail(emailValue)) {
         this.highlightEmailWithError = false;

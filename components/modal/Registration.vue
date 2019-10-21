@@ -148,6 +148,7 @@ export default {
     }
   },
 
+//hide modal if user close it.
   methods: {
     closeModal () {
       this.$store.commit('showSignupModal', false);
@@ -155,6 +156,7 @@ export default {
     checkForm (e) {
       e.preventDefault();
 
+// if everything ok, its success on form and goes on
       if (this.name && this.email && this.password && this.repeatPassword) {
         this.highlightEmailWithError = false;
         this.highlightPasswordWithError = false;
@@ -164,6 +166,7 @@ export default {
         this.$store.commit('isUserLoggedIn', this.isFormSuccess);
       }
 
+//shows error messages if user type something wrong
       if (!this.name) {
         this.highlightNameWithError = true;
       } else {
@@ -192,6 +195,8 @@ export default {
         this.highlightRepeatPasswordWithError = false;
       }
     },
+
+    // here it checks while user is typing.
     checkNameOnKeyUp (nameValue) {
       if (nameValue) {
         this.highlightNameWithError = false;
